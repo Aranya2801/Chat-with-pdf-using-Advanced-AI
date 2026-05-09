@@ -1,5 +1,4 @@
 <img width="1536" height="1024" alt="app_preview png" src="https://github.com/user-attachments/assets/979befeb-0a96-44e4-ad21-76cc115b4ba6" />
-<img width="1536" height="1024" alt="app_preview png" src="https://github.com/user-attachments/assets/cea2933e-4f69-44c8-b518-6b3819bf9104" />
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Chat%20with%20PDF&fontSize=60&fontAlignY=35&desc=Advanced%20AI%20%E2%80%94%20Multi-Agent%20RAG%20System&descAlignY=55&descSize=20&fontColor=fff" width="100%"/>
@@ -38,7 +37,7 @@
 
 <div align="center">
 
-<img src="app_preview.png" alt="Chat with PDF — Advanced AI Full Application Preview" width="100%"/>
+<img src="[app_preview.png](https://github.com/user-attachments/assets/979befeb-0a96-44e4-ad21-76cc115b4ba6)" alt="app_preview png" width="100%"/>
 
 </div>
 
