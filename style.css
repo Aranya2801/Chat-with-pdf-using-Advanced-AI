@@ -1,0 +1,379 @@
+/* ═══════════════════════════════════════════════════════════════════
+   ChatPDF Advanced AI — Custom Stylesheet
+   Author: Aranya2801 | MIT-Grade Design System
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Google Fonts ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ── Root Variables ───────────────────────────────────────────────── */
+:root {
+  --primary:        #6366f1;
+  --primary-dark:   #4f46e5;
+  --primary-light:  #e0e7ff;
+  --secondary:      #764ba2;
+  --accent:         #06b6d4;
+  --success:        #10b981;
+  --warning:        #f59e0b;
+  --danger:         #ef4444;
+  --bg-main:        #f8fafc;
+  --bg-card:        #ffffff;
+  --bg-sidebar:     #1e1e2e;
+  --text-primary:   #111827;
+  --text-secondary: #6b7280;
+  --text-muted:     #9ca3af;
+  --border:         #e5e7eb;
+  --border-focus:   #6366f1;
+  --radius-sm:      6px;
+  --radius-md:      12px;
+  --radius-lg:      20px;
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md:      0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg:      0 8px 32px rgba(0,0,0,0.14);
+  --font-sans:      'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:      'JetBrains Mono', 'Fira Code', monospace;
+  --gradient:       linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-warm:  linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-cool:  linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* ── Global Base ──────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+html, body, [data-testid="stAppViewContainer"] {
+  font-family: var(--font-sans) !important;
+  background-color: var(--bg-main) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ── Hide Streamlit Branding ──────────────────────────────────────── */
+#MainMenu { visibility: hidden; }
+footer    { visibility: hidden; }
+header    { visibility: hidden; }
+
+/* ── Main Container ───────────────────────────────────────────────── */
+.main .block-container {
+  padding: 1.5rem 2rem 2rem 2rem !important;
+  max-width: 1400px !important;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+  background: var(--bg-sidebar) !important;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+[data-testid="stSidebar"] * {
+  color: #e5e7eb !important;
+}
+
+[data-testid="stSidebar"] .stMarkdown h3 {
+  color: #a5b4fc !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+[data-testid="stSidebar"] .stButton > button {
+  background: rgba(99,102,241,0.15) !important;
+  border: 1px solid rgba(99,102,241,0.3) !important;
+  color: #a5b4fc !important;
+  border-radius: var(--radius-md) !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:hover {
+  background: rgba(99,102,241,0.3) !important;
+  border-color: #6366f1 !important;
+  color: #fff !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── Primary Button ───────────────────────────────────────────────── */
+.stButton > button[kind="primary"] {
+  background: var(--gradient) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  padding: 0.6rem 1.2rem !important;
+  box-shadow: 0 4px 15px rgba(99,102,241,0.4) !important;
+  transition: all 0.25s ease !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(99,102,241,0.5) !important;
+}
+
+/* ── Secondary Buttons ────────────────────────────────────────────── */
+.stButton > button {
+  border-radius: var(--radius-md) !important;
+  font-weight: 600 !important;
+  font-size: 0.82rem !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid var(--border) !important;
+}
+
+.stButton > button:hover {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* ── Text Input ───────────────────────────────────────────────────── */
+.stTextInput input,
+.stTextArea textarea {
+  border-radius: var(--radius-md) !important;
+  border: 1.5px solid var(--border) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.9rem !important;
+  padding: 0.6rem 1rem !important;
+  transition: border-color 0.2s ease !important;
+  background: var(--bg-card) !important;
+}
+
+.stTextInput input:focus,
+.stTextArea textarea:focus {
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1) !important;
+  outline: none !important;
+}
+
+/* ── Chat Input ───────────────────────────────────────────────────── */
+[data-testid="stChatInput"] {
+  border-radius: var(--radius-lg) !important;
+  border: 2px solid var(--border) !important;
+  background: var(--bg-card) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+[data-testid="stChatInput"]:focus-within {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.12) !important;
+}
+
+/* ── Chat Messages ────────────────────────────────────────────────── */
+[data-testid="stChatMessage"] {
+  border-radius: var(--radius-md) !important;
+  margin-bottom: 0.75rem !important;
+  padding: 0.25rem !important;
+  border: 1px solid transparent !important;
+  transition: border-color 0.2s ease !important;
+}
+
+[data-testid="stChatMessage"]:hover {
+  border-color: var(--border) !important;
+}
+
+/* User message */
+[data-testid="stChatMessage"][data-testid*="user"] {
+  background: var(--primary-light) !important;
+}
+
+/* ── Metrics / KPI Cards ──────────────────────────────────────────── */
+[data-testid="stMetric"] {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1rem !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+
+[data-testid="stMetric"]:hover {
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-2px) !important;
+}
+
+[data-testid="stMetricLabel"] {
+  color: var(--text-secondary) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+[data-testid="stMetricValue"] {
+  color: var(--text-primary) !important;
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  font-family: var(--font-sans) !important;
+}
+
+/* ── Select Box ───────────────────────────────────────────────────── */
+[data-testid="stSelectbox"] > div > div {
+  border-radius: var(--radius-md) !important;
+  border: 1.5px solid var(--border) !important;
+  background: var(--bg-card) !important;
+}
+
+/* ── Slider ───────────────────────────────────────────────────────── */
+[data-testid="stSlider"] [data-baseweb="slider"] [role="slider"] {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+/* ── Expander ─────────────────────────────────────────────────────── */
+[data-testid="stExpander"] {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  overflow: hidden !important;
+}
+
+[data-testid="stExpander"] summary {
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  padding: 0.75rem 1rem !important;
+  background: var(--bg-card) !important;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────────── */
+[data-testid="stTabs"] [data-baseweb="tab-list"] {
+  background: transparent !important;
+  gap: 0.25rem !important;
+  border-bottom: 2px solid var(--border) !important;
+}
+
+[data-testid="stTabs"] [data-baseweb="tab"] {
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0 !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  padding: 0.6rem 1.2rem !important;
+  color: var(--text-secondary) !important;
+  border: none !important;
+  background: transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-testid="stTabs"] [aria-selected="true"] {
+  color: var(--primary) !important;
+  background: var(--primary-light) !important;
+  border-bottom: 2px solid var(--primary) !important;
+}
+
+/* ── File Uploader ────────────────────────────────────────────────── */
+[data-testid="stFileUploader"] {
+  border: 2px dashed var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 1rem !important;
+  background: #fafbff !important;
+  transition: border-color 0.2s ease !important;
+}
+
+[data-testid="stFileUploader"]:hover {
+  border-color: var(--primary) !important;
+  background: var(--primary-light) !important;
+}
+
+/* ── Alerts / Info Boxes ──────────────────────────────────────────── */
+[data-testid="stAlert"] {
+  border-radius: var(--radius-md) !important;
+  border-left-width: 4px !important;
+  font-size: 0.88rem !important;
+}
+
+/* ── Progress Bar ─────────────────────────────────────────────────── */
+[data-testid="stProgressBar"] > div > div {
+  background: var(--gradient) !important;
+  border-radius: 99px !important;
+}
+
+/* ── Code Blocks ──────────────────────────────────────────────────── */
+code {
+  font-family: var(--font-mono) !important;
+  background: #f3f4f6 !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 1px 6px !important;
+  font-size: 0.82em !important;
+  color: #7c3aed !important;
+}
+
+pre code {
+  background: #1e1e2e !important;
+  color: #cdd6f4 !important;
+  display: block !important;
+  padding: 1rem !important;
+  border-radius: var(--radius-md) !important;
+  border: none !important;
+}
+
+/* ── Dividers ─────────────────────────────────────────────────────── */
+hr {
+  border: none !important;
+  border-top: 1px solid var(--border) !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(99,102,241,0.3);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99,102,241,0.6);
+}
+
+/* ── Download Button ──────────────────────────────────────────────── */
+[data-testid="stDownloadButton"] > button {
+  background: var(--bg-card) !important;
+  border: 1.5px solid var(--border) !important;
+  color: var(--primary) !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-md) !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-testid="stDownloadButton"] > button:hover {
+  background: var(--primary-light) !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── Toggle ───────────────────────────────────────────────────────── */
+[data-testid="stCheckbox"] span[data-testid="stCheckboxWidget"],
+[role="switch"] {
+  accent-color: var(--primary) !important;
+}
+
+/* ── Caption / Small Text ─────────────────────────────────────────── */
+.stCaption, [data-testid="stCaption"] {
+  color: var(--text-muted) !important;
+  font-size: 0.75rem !important;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .main .block-container {
+    padding: 1rem !important;
+  }
+}
+
+/* ── Animations ───────────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.3); }
+  50%       { box-shadow: 0 0 0 8px rgba(99,102,241,0); }
+}
+
+[data-testid="stChatMessage"] {
+  animation: fadeInUp 0.3s ease-out !important;
+}
+
+/* ── Tooltip ──────────────────────────────────────────────────────── */
+[data-testid="stTooltipIcon"] {
+  color: var(--text-muted) !important;
+}
