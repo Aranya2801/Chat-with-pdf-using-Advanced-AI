@@ -37,7 +37,7 @@
 
 <div align="center">
 
-<img src="[app_preview.png](https://github.com/user-attachments/assets/979befeb-0a96-44e4-ad21-76cc115b4ba6)" alt="app_preview png" width="100%"/>
+<img src="https://github.com/user-attachments/assets/979befeb-0a96-44e4-ad21-76cc115b4ba6" alt="app_preview png" width="100%"/>
 
 </div>
 
