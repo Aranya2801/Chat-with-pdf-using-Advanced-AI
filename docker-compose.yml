@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  # ── Main Application ─────────────────────────────────────────
+  app:
+    build: .
+    container_name: chatpdf-ai
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - VECTOR_BACKEND=${VECTOR_BACKEND:-faiss}
+      - PERSIST_DIR=/app/data/vectorstore
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - vectorstore_data:/app/data/vectorstore
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # ── Optional: ChromaDB Server (if using chroma backend) ──────
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: chatpdf-chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+    restart: unless-stopped
+    profiles:
+      - chroma   # only starts if: docker compose --profile chroma up
+
+volumes:
+  vectorstore_data:
+  chroma_data:
