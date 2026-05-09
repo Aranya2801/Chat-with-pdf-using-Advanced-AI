@@ -36,7 +36,7 @@
 
 <div align="center">
 
-<img src="docs/screenshots/app_preview.png" alt="Chat with PDF — Advanced AI Full Application Preview" width="100%"/>
+<img src="app_preview.png" alt="Chat with PDF — Advanced AI Full Application Preview" width="100%"/>
 
 </div>
 
