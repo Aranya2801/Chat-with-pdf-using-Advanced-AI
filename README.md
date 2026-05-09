@@ -32,81 +32,68 @@
 
 ---
 
-## 📸 Screenshots
+## 📸 Application Preview
+
+<div align="center">
+
+<img src="docs/screenshots/app_preview.png" alt="Chat with PDF — Advanced AI Full Application Preview" width="100%"/>
+
+</div>
+
+<br/>
+
+The app ships with **four fully functional panels**, all visible in the screenshot above:
 
 <table>
 <tr>
-<td width="50%">
-<img src="docs/screenshots/chat_interface.png" alt="Chat Interface" width="100%"/>
-<p align="center"><b>💬 AI Chat with Real-Time Citations</b></p>
+<td width="50%" valign="top">
+
+### 💬 1. Chat Interface with Citations
+- Ask any question in plain English
+- AI answers stream token-by-token in real time
+- Every response shows **exact source files + page numbers**
+- Agent metadata badges display which AI agent handled your query, the detected intent, and response latency
+- 👍 / 👎 feedback buttons on every message
+- Chat history sidebar with previous sessions
+
 </td>
-<td width="50%">
-<img src="docs/screenshots/analytics.png" alt="Analytics Dashboard" width="100%"/>
-<p align="center"><b>📊 Session Analytics Dashboard</b></p>
+<td width="50%" valign="top">
+
+### 📊 2. Analytics Dashboard
+- **Live KPI cards** — Total Queries, Sessions, Avg Response Time, Satisfaction Score
+- **Queries Over Time** — line chart tracking daily usage (May 1–29 shown)
+- **Agent Distribution** — donut chart showing RetrievalAgent 45%, ReasoningAgent 25%, SummaryAgent 15%, TableAgent 10%, CitationAgent 5%
+- **Response Time** and **User Satisfaction** trend charts
+- Date range picker for custom time windows
+
 </td>
 </tr>
 <tr>
-<td width="50%">
-<img src="docs/screenshots/smart_notes.png" alt="Smart Notes" width="100%"/>
-<p align="center"><b>📝 Auto-Generated Smart Notes</b></p>
+<td width="50%" valign="top">
+
+### 📝 3. Smart Notes Generator
+Five selectable note styles in the left panel:
+- **Executive Summary** ← shown in preview
+- Key Concepts
+- Q&A Format
+- Bullet Points
+- Mind Map
+
+Generated output includes structured takeaways with checkmarks, a full conclusion, and a one-click **download** button for the notes as Markdown.
+
 </td>
-<td width="50%">
-<img src="docs/screenshots/pdf_viewer.png" alt="PDF Viewer" width="100%"/>
-<p align="center"><b>📄 Semantic PDF Search & Viewer</b></p>
+<td width="50%" valign="top">
+
+### 📄 4. PDF Viewer with Semantic Search
+- Inline **page-by-page PDF rendering** with page counter (2/16 shown)
+- **Semantic Search bar** — type a phrase, get ranked passage results with page links
+- Each result shows the matching excerpt with keyword highlighting
+- **"Go to Page"** button jumps directly to the relevant page
+- RAG architecture diagram visible directly inside the rendered PDF
+
 </td>
 </tr>
 </table>
-
----
-
-## ✨ Features
-
-### 🤖 Multi-Agent Architecture
-| Agent | Trigger Intent | Capability |
-|-------|---------------|------------|
-| **RetrievalAgent** | factual, definition | Hybrid BM25 + dense search + reranking |
-| **ReasoningAgent** | reasoning, comparison | Chain-of-Thought multi-hop QA |
-| **SummaryAgent** | summary | Map-reduce extractive + abstractive |
-| **CitationAgent** | all (enrichment) | Page-level inline citations |
-| **TableAgent** | table, data | Structured data extraction & analysis |
-
-### 🔍 Hybrid Retrieval Pipeline
-```
-Query → BM25 Sparse Search ──┐
-      → Dense Vector Search ──┤→ RRF Fusion → Cross-Encoder Rerank → Top-K Docs
-      → Query Expansion      ──┘
-```
-
-### 📚 Advanced PDF Processing
-- **PyMuPDF** primary extraction with layout preservation
-- **pdfplumber** fallback for complex layouts  
-- **Tesseract OCR** for scanned/image PDFs
-- Layout-aware chunking (respects section boundaries)
-- Automatic TOC and section metadata extraction
-- Duplicate chunk detection via content hashing
-
-### 💬 Chat Interface
-- ⚡ Real-time streaming token display
-- 📚 Automatic page-level source citations
-- 🏷️ Agent metadata badges (agent used, intent, latency)
-- 👍/👎 Response quality feedback
-- 💡 AI-powered follow-up suggestions
-- ⬇️ Chat history export (Markdown)
-- 🧩 Auto-generated quiz mode
-
-### 📝 Smart Notes Generator
-Five output styles:
-1. **Executive Summary** — C-suite ready overview
-2. **Key Concepts** — Structured glossary
-3. **Q&A Format** — Anticipated questions & answers  
-4. **Bullet Points** — Hierarchical key points
-5. **Mind Map** — ASCII tree visualization
-
-### 📊 Analytics Dashboard
-- Query volume & agent distribution charts
-- Response latency timeline
-- User satisfaction tracking
-- JSON report export
 
 ---
 
